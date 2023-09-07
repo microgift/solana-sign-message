@@ -22,12 +22,16 @@ const Home: NextPage = () => {
       setLoading(true);
       console.log("loading");
 
-      const msg = new TextEncoder().encode(message);
-      const sig = await signMessage?.(msg);
+      try {
+        const msg = new TextEncoder().encode(message);
+        const sig = await signMessage?.(msg);
 
-      const res = bs58.encode(sig as Uint8Array);
-      setSignedMessage(res);
-      successAlert("Successfully signed.");
+        const res = bs58.encode(sig as Uint8Array);
+        setSignedMessage(res);
+        successAlert("Message signed.");
+      } catch (e) {
+        errorAlert("Failed to sign message.");
+      }
     } else {
       infoAlert("Please connect your wallet.");
     }
