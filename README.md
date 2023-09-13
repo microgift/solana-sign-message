@@ -1,6 +1,7 @@
-# Simple Jackpot in Solana
+# Simple Frontend to Sign with Solana wallet
 
-## Requirements
+## Purpose
+You need to sign some text messages in order to test solana backend.
 
 ## Development
 
@@ -9,5 +10,3 @@ npm run dev
 # or
 yarn dev
 ```
-
-### Install
